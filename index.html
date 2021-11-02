@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIG UP</title>
+    <link rel="shortcut icon" href="submit.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="preloder"></div>
+    <h2 class="heading">Sign up form</h2>
+    <div class="box">
+        <form action="./submit.html" id="form" onsubmit="return validate();" method="GET">
+            <label>First name: <input type="text" name="fname" placeholder="First name" required=""></label><br>
+            <label>Last name: <input type="text" name="lname" placeholder="Last name" required=""></label><br>
+
+            <label>Enter E-Mail<input type="email" name="email" placeholder="Email" required=""></label><br>
+
+            <label>Password: <input id="pass1" type="password" name="password" placeholder="Password" required=""></label><br>
+
+            <label>Repeat Password<input id="pass2" type="password" name="password" placeholder="Repeat Password"
+                    required=""></label>
+            <br>
+  2         <label>Date of Birth:<input type="date" name="dob" required=""></label><br><br>
+
+            <label style="text-align: left !important">Gender: </label>
+            <select name="gender">
+                <option selected>select</option>
+                <option value="Male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br><br>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <footer>
+        <a href="">
+            <p id="footer">&copy 2021 All Rights Reserved Design by Vishal Baste</p>
+        </a>
+    </footer>
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(function () { document.querySelector(".preloder").style.display = "none"; }, 1000);
+        }
+        let form= document.getElementById('form');
+        function validate(){
+            let pass1= document.getElementById('pass1').value;
+            let pass2= document.getElementById('pass2').value;
+            var reval = false;
+            if(pass1==pass2){
+                let validate = true;
+                reval= true;
+            }
+            else {
+                alert('Password Mismach');
+                reval =false;
+            }
+          return reval;
+        }
+        
+
+    </script>
+</body>
+
+</html>

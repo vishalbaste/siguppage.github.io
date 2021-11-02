@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Successfull</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="submit.png" type="image/x-icon">
+</head>
+
+<body>
+    <h1>Confirm Details</h1>
+    <div class="preloder">
+
+    </div>
+    <div>
+        <img src="submit.png" alt="submit">
+    </div>
+    <div>
+        <div class="center">
+        <form action="savedata.php" method="POST">
+            <input readonly required type="text" class="result res1" name="fname">
+            <input readonly required type="text" class="result res2" name="lname">
+            <input readonly required type="email" class="result res3" name="email">
+            <input readonly required type="date" class="result res4" name="dob">
+            <input readonly required type="text" class="result res5" name="password">
+            <input readonly required type="text" class="result res6" name="gender"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+    <footer>
+        <a href="">
+            <p id="footer">&copy 2021 All Rights Reserved Design by Vishal Baste</p>
+        </a>
+    </footer>
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(function () { document.querySelector(".preloder").style.display = "none"; }, 2000);
+        }
+
+        let res = (new URL(window.location)).searchParams;
+        let fname = res.get('fname');
+        let lname = res.get('lname');
+        let email = res.get('email');
+        let dob = res.get('dob');
+        let password = res.get('password');
+        let gender = res.get('gender');
+        console.log(fname);
+        console.log(lname);
+        console.log(email);
+        console.log(dob);
+        console.log(password);
+        console.log(gender);
+
+        document.querySelector('.res1').value = fname;
+        document.querySelector('.res2').value = lname;
+        document.querySelector('.res3').value = email;
+        document.querySelector('.res4').value = dob;
+        document.querySelector('.res5').value = password;
+        document.querySelector('.res6').value = gender;
+        // window.location.reload()
+    </script>
+</body>
+
+</html>
